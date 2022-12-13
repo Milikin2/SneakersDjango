@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% load static %}
+{% include 'head.html' %}
+<body>
+	<div class="wrapper">
+		{% include 'headerAdmin.html' %}
+		<main class="page cabinet">
+			<div class="cabinet__container">
+				<div class="cabinet__body">
+					<div class="admin__header">
+						<h1 class="cabinet__title">Здравствуйте UserName</h1>
+						<a href="{% url 'addProduct' %}" class="admin__product-add"></a>
+					</div>
+					<div class="cabinet__content">
+						<ul class="cabinet__nav admin__nav">
+							<li data-admin="Кроссовки" class="cabinet__nav-item cabinet__nav-active">
+								<h4 class="cabinet__nav-title">Кроссовки</h4>
+							</li>
+							<li data-admin="Ремни" class="cabinet__nav-item">
+								<h4 class="cabinet__nav-title">Ремни</h4>
+							</li>
+							<li data-admin="Рюкзак" class="cabinet__nav-item">
+								<h4 class="cabinet__nav-title">Рюкзаки</h4>
+							</li>
+							<li data-admin="Худи" class="cabinet__nav-item">
+								<h4 class="cabinet__nav-title">Худи</h4>
+							</li>
+							<li data-admin="Джинсы" class="cabinet__nav-item">
+								<h4 class="cabinet__nav-title">Джинсы</h4>
+							</li>
+							<li data-admin="Работники" class="cabinet__nav-item">
+								<h4 class="cabinet__nav-title">Работники</h4>
+							</li>
+							<li data-admin="Пользователи" class="cabinet__nav-item">
+								<h4 class="cabinet__nav-title">Пользователи</h4>
+							</li>
+							<li data-admin="Заказы" class="cabinet__nav-item">
+								<h4 class="cabinet__nav-title">Заказы</h4>
+							</li>
+						</ul>
+
+						<div class="cabinet__info">
+							<ul class="admin__products-list"></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+				</div>
+			</footer>
+		</main>
+	</div>
+	<script src="../static/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<header class="header">
+    <div class="header__container">
+        <div class="header__body">
+            <a href="{% url 'home' %}" class="header__logo">
+                <img src="../static/img/header__logo.svg" alt="sneakers__logo" class="header__logo-img">
+                <div class="header__logo-title">
+                    <h2 class="header__logo-h2">react sneakers</h2>
+                    <h3 class="header__logo-h3">Магазин лучших кроссовок</h3>
+                </div>
+            </a>
+
+
+            <div class="header__additional">
+                <button data-header="cart" type="button" class="header__additional-cart header__additional-button">
+                    <img src="../static/img/shopping__cart.svg" class="header__additional-img" alt="Shopping cart">
+                    <span class="header__cart-price">0 руб.</span>
+                </button>
+                <button data-header="fav" type="button"
+                        class="header__additional-favourite header__additional-button"></button>
+                <a data-popup="#usersign" href="#" class="header__additional-user header__additional-button">
+                    <img src="../static/img/user__icon.svg" class="header__additional-img" alt="User cabinet">
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% block content %}
+{% endblock %}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Корзина</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20221212114655">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap&_v=20221212114655" rel="stylesheet">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__body">
+					<a href="home.html" class="header__logo">
+						<img src="img/header__logo.svg" alt="sneakers__logo" class="header__logo-img">
+						<div class="header__logo-title">
+							<h2 class="header__logo-h2">react sneakers</h2>
+							<h3 class="header__logo-h3">Магазин лучших кроссовок</h3>
+						</div>
+					</a>
+
+
+					<div class="header__additional">
+						<button data-header="cart" type="button" class="header__additional-cart header__additional-button">
+							<img src="img/shopping__cart.svg" class="header__additional-img" alt="Shopping cart">
+							<span class="header__cart-price">0 руб.</span>
+						</button>
+						<button data-header="fav" type="button" class="header__additional-favourite header__additional-button"></button>
+						<a data-popup="#usersign" href="#" class="header__additional-user header__additional-button">
+							<img src="img/user__icon.svg" class="header__additional-img" alt="User cabinet">
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page cart">
+			<div class="cart__container">
+				<div class="cart__body">
+					<div class="home__slider swiper">
+						<div class="home__wrapper swiper-wrapper">
+							<div class="home__slide swiper-slide"></div>
+						</div>
+					</div>
+
+					<div class="cart__content">
+						<ul class="cart__list">
+							<li data-value="Мужские Кроссовки Under Armour Curry 8" data-brand="under" data-type="Кроссовки" class="home__list-item cart__list-item">
+								<div class="home__item-img cart__list-img">
+									<button type="button" class="home__item-fav cart__item-fav"></button>
+									<picture><source srcset="img/5.webp" type="image/webp"><img src="img/5.png" alt="Мужские Кроссовки Under Armour Curry 8"></picture>
+								</div>
+								<div class="home__item-title cart__item-title">Мужские Кроссовки Under Armour Curry 8
+								</div>
+								<div class="home__item-footer cart__item-footer">
+									<div class="home__item-price cart__item-price">
+										<p>Цена:</p>
+										<p class="home__item-money cart__item-money">15199 руб.</p>
+									</div>
+									<button class="home__item-remove"></button>
+								</div>
+							</li>
+						</ul>
+
+						<div class="cart__confirm-order">
+							<button type="button" class="cart__confirm-button">Оформить заказ</button>
+							<h3 class="cart__confirm-title">Ваш заказ</h3>
+							<div class="cart__confirm-footer">
+								<h4 class="cart__confirm-subtitle">Итого: <div></div> <span class="cart__confirm-price">21 498
+										руб.</span></h4>
+								<h4 class="cart__confirm-subtitle">Налог 5%: <div></div> <span class="cart__confirm-price">1074
+										руб.</span></h4>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+			</div>
+		</footer>
+	</div>
+	<div id="usersign" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__form-container">
+					<h2 class="popup__form-title">Авторизация</h2>
+					<form data-dev action="" method="GET" class="popup__form-form">
+						<div class="popup__form-data">
+							<h3>Ваш логин</h3>
+							<input type="text" class="popup__form-login" data-required data-error="Поле обязательно для ввода" placeholder="Логин">
+						</div>
+						<div class="popup__form-data">
+							<h3>Ваш пароль</h3>
+							<input type="password" class="popup__form-password" data-required data-error="Поле обязательно для ввода" placeholder="Пароль">
+							<button class="form__viewpass form__login-pass" type="button"></button>
+						</div>
+						<div class="popup__form-footer">
+							<button type="submit" class="popup__form-signup">Авторизоваться</button>
+							<p class="popup__form-text">У Вас ещё нет аккаунта?
+								<a href="#" data-popup="#userreg" class="popup__reg-link">Зарегистрироваться</a>
+							</p>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20221212114655"></script>
+</body>
+
+</html>

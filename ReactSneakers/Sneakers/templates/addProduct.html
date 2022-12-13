@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% load static %}
+{% include "head.html" %}
+
+
+<body>
+	<div class="wrapper">
+		{% include "headerAdmin.html" %}
+		<main class="page cabinet">
+			<div class="cabinet__container">
+				<div class="cabinet__body">
+					<a href="{% url 'admin' %}" class="admin__add-back"></a>
+
+					<div data-tabs class="tabs">
+						<nav data-tabs-titles class="tabs__navigation">
+							<button type="button" class="tabs__title _tab-active cabinet__title">Добавьте товар</button>
+							<button type="button" class="tabs__title cabinet__title">Добавить работника</button>
+						</nav>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body">
+								<div class="admin__add-container">
+									<form action="" class="admin__add-form">
+										<div class="cabinet__info-block">
+											<h3>Название товара</h3>
+											<input type="text" placeholder="Товар" data-required data-error="Поле обязательно для заполнения" class="admin__add-title">
+										</div>
+										<div class="cabinet__info-block">
+											<h3>Ссылка на картинку</h3>
+											<input type="text" placeholder="Ссылка" data-required data-error="Поле обязательно для заполнения" class="admin__add-img">
+										</div>
+										<div class="cabinet__info-block">
+											<h3>Цена за товар</h3>
+											<input type="number" placeholder="Цена" data-required data-error="Поле обязательно для заполнения" class="admin__add-img">
+										</div>
+										<div class="cabinet__info-block">
+											<h3>Бренд товара</h3>
+											<input type="text" placeholder="Бренд" data-required data-error="Поле обязательно для заполнения" class="admin__add-brand">
+										</div>
+										<div class="cabinet__info-block">
+											<h3>Вид товара</h3>
+											<select name="form[]" class="form">
+												<option value="Кроссовки" selected>Кроссовки</option>
+												<option value="Рюкзак">Рюкзак</option>
+												<option value="Джинсы">Джинсы</option>
+												<option value="Худи">Худи</option>
+												<option value="Ремни">Ремни</option>
+											</select>
+										</div>
+										<button type="submit" class="admin__add-confirm">Сохранить изменения</button>
+									</form>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="admin__add-container">
+									<form action="" class="admin__add-form">
+										<div class="cabinet__info-block">
+											<h3>Имя работника</h3>
+											<input type="text" placeholder="Имя" data-required data-error="Поле обязательно для заполнения" class="admin__add-name">
+										</div>
+										<div class="cabinet__info-block">
+											<h3>Фамилия работника</h3>
+											<input type="text" placeholder="Фамилия" data-required data-error="Поле обязательно для заполнения" class="admin__add-lastname">
+										</div>
+										<div class="cabinet__info-block">
+											<h3>Номер телефона</h3>
+											<input type="tel" placeholder="Номер" data-required data-error="Поле обязательно для заполнения" class="admin__add-phone popup__phone">
+										</div>
+										<div class="cabinet__info-block">
+											<h3>Почта работника</h3>
+											<input type="email" placeholder="Email" data-required data-error="Поле обязательно для заполнения" class="admin__add-email">
+										</div>
+										<div class="cabinet__info-block">
+											<h3>Должность работника</h3>
+											<input type="text" placeholder="Должность" data-required data-error="Поле обязательно для заполнения" class="admin__add-email">
+										</div>
+										<div class="cabinet__info-block">
+											<h3>Зарплата работника</h3>
+											<input type="number" placeholder="Зарплата" data-required data-error="Поле обязательно для заполнения" class="admin__add-email">
+										</div>
+										<button type="submit" class="admin__add-confirm">Добавить</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="admin__header">
+						<h1 class="cabinet__title"></h1>
+					</div>
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+				</div>
+			</footer>
+		</main>
+	</div>
+	<div id="usersign" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__form-container">
+					<h2 class="popup__form-title">Авторизация</h2>
+					<form data-dev action="" method="GET" class="popup__form-form">
+						<div class="popup__form-data">
+							<h3>Ваш логин</h3>
+							<input type="text" class="popup__form-login" data-required data-error="Поле обязательно для ввода" placeholder="Логин">
+						</div>
+						<div class="popup__form-data">
+							<h3>Ваш пароль</h3>
+							<input type="password" class="popup__form-password" data-required data-error="Поле обязательно для ввода" placeholder="Пароль">
+							<button class="form__viewpass form__login-pass" type="button"></button>
+						</div>
+						<div class="popup__form-footer">
+							<button type="submit" class="popup__form-signup">Авторизоваться</button>
+							<p class="popup__form-text">У Вас ещё нет аккаунта?
+								<a href="#" data-popup="#userreg" class="popup__reg-link">Зарегистрироваться</a>
+							</p>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="userreg" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__form-container">
+					<h2 class="popup__form-title">Регистрация</h2>
+					<form data-dev action="" method="" class="popup__form-form">
+						<div class="popup__form-data">
+							<h3>Ваше имя</h3>
+							<input type="text" class="popup__reg-name" data-required data-error="Поле обязательно для ввода" placeholder="Имя">
+						</div>
+						<div class="popup__form-data">
+							<h3>Ваша фамилия</h3>
+							<input type="text" class="popup__reg-lastname" data-required data-error="Поле обязательно для ввода" placeholder="Фамилия">
+						</div>
+						<div class="popup__form-data">
+							<h3>Придумайте логин</h3>
+							<input type="text" class="popup__form-login" data-required data-error="Поле обязательно для ввода" placeholder="Логин">
+						</div>
+						<div class="popup__form-data">
+							<h3>Придумайте пароль</h3>
+							<input type="password" class="popup__password-password" data-required data-error="Поле обязательно для ввода" placeholder="Пароль">
+							<button class="form__viewpass" type="button"></button>
+							<input type="password" class="popup__password-confrim" data-required placeholder="Подтвердите пароль">
+						</div>
+						<div class="popup__form-data">
+							<h3>Ваша почта</h3>
+							<input type="email" data-error="Введен не верный E-mail" data-required="email" class="popup__email" placeholder="Почта">
+						</div>
+						<div class="popup__form-data">
+							<h3>Ваш номер телефона</h3>
+							<input type="tel" class="popup__phone" data-required data-error="Поле обязательно для ввода" placeholder="Телефон">
+						</div>
+						<div class="popup__form-footer">
+							<button type="submit" class="popup__form-signup popup__form-reg">Зарегистрироваться</button>
+							<p class="popup__form-text">У Вас есть аккаунт? <a href="#" data-popup="#usersign" class="popup__reg-link">Войти</a>
+							</p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../static/js/app.js"></script>
+</body>
+
+</html>

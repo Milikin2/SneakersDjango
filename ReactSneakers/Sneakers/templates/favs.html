@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+{% load static %}
+{% include 'head.html' %}
+
+
+<body>
+	<div class="wrapper">
+		{% include 'headerAdmin.html' %}
+		<main class="page cabinet">
+			<div class="cabinet__container">
+				<div class="cabinet__body">
+					<h1 class="cabinet__title">Избранное</h1>
+
+					<div class="cabinet__content">
+						<ul class="cabinet__nav">
+							<li class="cabinet__nav-item">
+								<a href="{% url 'cabinet' %}" class="cabinet__nav-link">
+									<h4 class="cabinet__nav-title">Мои заказы</h4>
+								</a>
+							</li>
+							<li class="cabinet__nav-item">
+								<a href="#" class="cabinet__nav-link">
+									<h4 class="cabinet__nav-title cabinet__nav-active">Избранное</h4>
+								</a>
+							</li>
+							<li class="cabinet__nav-item">
+								<a href="{% url 'cabinetData'%}" class="cabinet__nav-link">
+									<h4 class="cabinet__nav-title">Личные данные</h4>
+								</a>
+							</li>
+						</ul>
+
+						<div class="cabinet__info">
+
+							<ul class="favs__list">
+								<li data-value="Мужские Кроссовки Under Armour Curry 8" data-brand="under" data-type="Кроссовки" class="home__list-item">
+									<div class="home__item-img">
+										<button type="button" class="home__item-fav fav__active"></button>
+										<picture><source srcset="img/5.webp" type="image/webp"><img src="img/5.png" alt="Мужские Кроссовки Under Armour Curry 8"></picture>
+									</div>
+									<div class="home__item-title">Мужские Кроссовки Under Armour Curry 8</div>
+									<div class="home__item-footer">
+										<div class="home__item-price">
+											<p>Цена:</p>
+											<p class="home__item-money">15199 руб.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+				</div>
+			</footer>
+		</main>
+	</div>
+	<div id="usersign" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__form-container">
+					<h2 class="popup__form-title">Авторизация</h2>
+					<form data-dev action="" method="GET" class="popup__form-form">
+						<div class="popup__form-data">
+							<h3>Ваш логин</h3>
+							<input type="text" class="popup__form-login" data-required data-error="Поле обязательно для ввода" placeholder="Логин">
+						</div>
+						<div class="popup__form-data">
+							<h3>Ваш пароль</h3>
+							<input type="password" class="popup__form-password" data-required data-error="Поле обязательно для ввода" placeholder="Пароль">
+							<button class="form__viewpass form__login-pass" type="button"></button>
+						</div>
+						<div class="popup__form-footer">
+							<button type="submit" class="popup__form-signup">Авторизоваться</button>
+							<p class="popup__form-text">У Вас ещё нет аккаунта?
+								<a href="#" data-popup="#userreg" class="popup__reg-link">Зарегистрироваться</a>
+							</p>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="userreg" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__form-container">
+					<h2 class="popup__form-title">Регистрация</h2>
+					<form data-dev action="" method="" class="popup__form-form">
+						<div class="popup__form-data">
+							<h3>Ваше имя</h3>
+							<input type="text" class="popup__reg-name" data-required data-error="Поле обязательно для ввода" placeholder="Имя">
+						</div>
+						<div class="popup__form-data">
+							<h3>Ваша фамилия</h3>
+							<input type="text" class="popup__reg-lastname" data-required data-error="Поле обязательно для ввода" placeholder="Фамилия">
+						</div>
+						<div class="popup__form-data">
+							<h3>Придумайте логин</h3>
+							<input type="text" class="popup__form-login" data-required data-error="Поле обязательно для ввода" placeholder="Логин">
+						</div>
+						<div class="popup__form-data">
+							<h3>Придумайте пароль</h3>
+							<input type="password" class="popup__password-password" data-required data-error="Поле обязательно для ввода" placeholder="Пароль">
+							<button class="form__viewpass" type="button"></button>
+							<input type="password" class="popup__password-confrim" data-required placeholder="Подтвердите пароль">
+						</div>
+						<div class="popup__form-data">
+							<h3>Ваша почта</h3>
+							<input type="email" data-error="Введен не верный E-mail" data-required="email" class="popup__email" placeholder="Почта">
+						</div>
+						<div class="popup__form-data">
+							<h3>Ваш номер телефона</h3>
+							<input type="tel" class="popup__phone" data-required data-error="Поле обязательно для ввода" placeholder="Телефон">
+						</div>
+						<div class="popup__form-footer">
+							<button type="submit" class="popup__form-signup popup__form-reg">Зарегистрироваться</button>
+							<p class="popup__form-text">У Вас есть аккаунт? <a href="#" data-popup="#usersign" class="popup__reg-link">Войти</a>
+							</p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../static/js/app.js"></script>
+</body>
+
+</html>

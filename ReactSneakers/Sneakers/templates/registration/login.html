@@ -1,0 +1,29 @@
+<div id="usersign" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<div class="popup__form-container">
+					<h2 class="popup__form-title">Авторизация</h2>
+					<form action="" method="POST" class="popup__form-form">
+						{% csrf_token %}
+						<div class="popup__form-data">
+							<h3>Ваш логин</h3>
+							<input type="text" class="popup__form-login" data-required data-error="Поле обязательно для ввода" placeholder="Логин">
+						</div>
+						<div class="popup__form-data">
+							<h3>Ваш пароль</h3>
+							<input type="password" class="popup__form-password" data-required data-error="Поле обязательно для ввода" placeholder="Пароль">
+							<button class="form__viewpass form__login-pass" type="button"></button>
+						</div>
+						<div class="popup__form-footer">
+							<button type="submit" class="popup__form-signup">Авторизоваться</button>
+							<p class="popup__form-text">У Вас ещё нет аккаунта?
+								<a href="#" data-popup="#userreg" class="popup__reg-link">Зарегистрироваться</a>
+							</p>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
