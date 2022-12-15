@@ -1670,43 +1670,43 @@
                                 },
                                 mask: function(e) {
                                     var t = this;
-//                                    return "string" == typeof e && (e = g.getElementById(e) || g.querySelectorAll(e)),
-//                                    (e = e.nodeName ? [ e ] : Array.isArray(e) ? e : Array.from(e)).forEach((function(e, i) {
-//                                        var l = n.default.extend(!0, {}, t.opts);
-//                                        if (function(e, t, i, a) {
-//                                            function o(t, n) {
-//                                                var o = "" === a ? t : a + "-" + t;
-//                                                null !== (n = void 0 !== n ? n : e.getAttribute(o)) && ("string" == typeof n && (0 === t.indexOf("on") ? n = r.default[n] : "false" === n ? n = !1 : "true" === n && (n = !0)),
-//                                                i[t] = n);
-//                                            }
-//                                            if (!0 === t.importDataAttributes) {
-//                                                var l, s, u, c, f = e.getAttribute(a);
-//                                                if (f && "" !== f && (f = f.replace(/'/g, '"'), s = JSON.parse("{" + f + "}")),
-//                                                s) for (c in u = void 0, s) if ("alias" === c.toLowerCase()) {
-//                                                    u = s[c];
-//                                                    break;
-//                                                }
-//                                                for (l in o("alias", u), i.alias && b(i.alias, i, t), t) {
-//                                                    if (s) for (c in u = void 0, s) if (c.toLowerCase() === l.toLowerCase()) {
-//                                                        u = s[c];
-//                                                        break;
-//                                                    }
-//                                                    o(l, u);
-//                                                }
-//                                            }
-//                                            n.default.extend(!0, t, i), ("rtl" === e.dir || t.rightAlign) && (e.style.textAlign = "right");
-//                                            ("rtl" === e.dir || t.numericInput) && (e.dir = "ltr", e.removeAttribute("dir"),
-//                                            t.isRTL = !0);
-//                                            return Object.keys(i).length;
-//                                        }(e, l, n.default.extend(!0, {}, t.userOptions), t.dataAttribute)) {
-//                                            var s = (0, o.generateMaskSet)(l, t.noMasksCache);
-//                                            void 0 !== s && (void 0 !== e.inputmask && (e.inputmask.opts.autoUnmask = !0, e.inputmask.remove()),
-//                                            e.inputmask = new y(void 0, void 0, !0), e.inputmask.opts = l, e.inputmask.noMasksCache = t.noMasksCache,
-//                                            e.inputmask.userOptions = n.default.extend(!0, {}, t.userOptions), e.inputmask.el = e,
-//                                            e.inputmask.$el = (0, n.default)(e), e.inputmask.maskset = s, n.default.data(e, k, t.userOptions),
-//                                            a.mask.call(e.inputmask));
-//                                        }
-//                                    })), e && e[0] && e[0].inputmask || this;
+                                    return "string" == typeof e && (e = g.getElementById(e) || g.querySelectorAll(e)),
+                                    (e = e.nodeName ? [ e ] : Array.isArray(e) ? e : Array.from(e)).forEach((function(e, i) {
+                                        var l = n.default.extend(!0, {}, t.opts);
+                                        if (function(e, t, i, a) {
+                                            function o(t, n) {
+                                                var o = "" === a ? t : a + "-" + t;
+                                                null !== (n = void 0 !== n ? n : e.getAttribute(o)) && ("string" == typeof n && (0 === t.indexOf("on") ? n = r.default[n] : "false" === n ? n = !1 : "true" === n && (n = !0)),
+                                                i[t] = n);
+                                            }
+                                            if (!0 === t.importDataAttributes) {
+                                                var l, s, u, c, f = e.getAttribute(a);
+                                                if (f && "" !== f && (f = f.replace(/'/g, '"'), s = JSON.parse("{" + f + "}")),
+                                                s) for (c in u = void 0, s) if ("alias" === c.toLowerCase()) {
+                                                    u = s[c];
+                                                    break;
+                                                }
+                                                for (l in o("alias", u), i.alias && b(i.alias, i, t), t) {
+                                                    if (s) for (c in u = void 0, s) if (c.toLowerCase() === l.toLowerCase()) {
+                                                        u = s[c];
+                                                        break;
+                                                    }
+                                                    o(l, u);
+                                                }
+                                            }
+                                            n.default.extend(!0, t, i), ("rtl" === e.dir || t.rightAlign) && (e.style.textAlign = "right");
+                                            ("rtl" === e.dir || t.numericInput) && (e.dir = "ltr", e.removeAttribute("dir"),
+                                            t.isRTL = !0);
+                                            return Object.keys(i).length;
+                                        }(e, l, n.default.extend(!0, {}, t.userOptions), t.dataAttribute)) {
+                                            var s = (0, o.generateMaskSet)(l, t.noMasksCache);
+                                            void 0 !== s && (void 0 !== e.inputmask && (e.inputmask.opts.autoUnmask = !0, e.inputmask.remove()),
+                                            e.inputmask = new y(void 0, void 0, !0), e.inputmask.opts = l, e.inputmask.noMasksCache = t.noMasksCache,
+                                            e.inputmask.userOptions = n.default.extend(!0, {}, t.userOptions), e.inputmask.el = e,
+                                            e.inputmask.$el = (0, n.default)(e), e.inputmask.maskset = s, n.default.data(e, k, t.userOptions),
+                                            a.mask.call(e.inputmask));
+                                        }
+                                    })), e && e[0] && e[0].inputmask || this;
                                 },
                                 option: function(e, t) {
                                     return "string" == typeof e ? this.opts[e] : "object" === v(e) ? (n.default.extend(this.userOptions, e), 
@@ -7278,9 +7278,6 @@
             let response = await fetch('http://127.0.0.1:8000/json/')
             let text = await response.text()
             let data = JSON.parse(text)
-            let responseWork = await fetch('http://127.0.0.1:8000/workers/')
-            let worktxt = await responseWork.text()
-            let workers = JSON.parse(worktxt)
             let responseUser = await fetch('http://127.0.0.1:8000/users/')
             let usertxt = await responseUser.text()
             let users = JSON.parse(usertxt)

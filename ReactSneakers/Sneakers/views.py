@@ -1,24 +1,12 @@
 from django.shortcuts import render
 from .models import Product
-from .models import Worker
 from .models import User
 from django.http import JsonResponse
-from django.views.generic.edit import CreateView
 
 
 # Create your views here.
-
-def index(request):
-    return render(request, 'index.html')
-
-
 def home(request):
     return render(request, 'home.html')
-
-
-def admin(request):
-    items = Product.objects.all()
-    return render(request, 'admin.html', {"items": items})
 
 
 def cabinet(request):
@@ -33,10 +21,6 @@ def cabinetData(request):
     return render(request, 'cabinetData.html')
 
 
-def addProduct(request):
-    return render(request, 'addProduct.html')
-
-
 def json(request):
     data = list(Product.objects.values())
     return JsonResponse(data, safe=False)
@@ -45,11 +29,6 @@ def json(request):
 def users(request):
     user = list(User.objects.values())
     return JsonResponse(user, safe=False)
-
-
-def workers(request):
-    worker = list(Worker.objects.values())
-    return JsonResponse(worker, safe=False)
 
 
 def createUser(request):

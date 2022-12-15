@@ -10,15 +10,6 @@ class Product(models.Model):
     productPrice = models.DecimalField("Цена", max_digits=10, decimal_places=2)
 
 
-class Worker(models.Model):
-    workerName = models.CharField("Имя работника", max_length=255)
-    workerLastname = models.CharField("Фамилия работника", max_length=255)
-    workerPhone = models.CharField("Телефон работника", max_length=255)
-    workerEmail = models.CharField("Почта работника", max_length=255)
-    workerPos = models.CharField("Должность работника", max_length=255)
-    workerSalary = models.DecimalField("Зарплата", max_digits=8, decimal_places=2)
-
-
 class User(models.Model):
     userName = models.CharField("Имя клиента", max_length=255)
     userLastname = models.CharField("Фамилия клиента", max_length=255)
