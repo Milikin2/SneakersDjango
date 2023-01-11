@@ -10,5 +10,6 @@ urlpatterns = [
     path('cabinetData.html/', views.cabinetData, name='cabinetData'),
     path('json/', views.json, name='json'),
     path('users/', views.users, name='users'),
-    path('createUser', views.createUser),
+    path('createUser/', views.createUser, name='createUser'),
+    path('cartOrder', views.cartOrder, name='cartOrder'),
 ]

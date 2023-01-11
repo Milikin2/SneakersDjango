@@ -5,181 +5,196 @@
 {% include "head.html" %}
 
 <body>
-	<div class="wrapper cart__wrapper ">
-		{% include "header.html" %}
-		<main class="page home">
-			<div class="home__container">
-				<div class="home__body">
-					<div class="home__slider swiper">
-						<div class="home__wrapper swiper-wrapper">
-							<div class="home__slide swiper-slide"></div>
-						</div>
-					</div>
+<div class="wrapper cart__wrapper ">
+    {% include "header.html" %}
+    <main class="page home">
+        <div class="home__container">
+            <div class="home__body">
+                <div class="home__slider swiper">
+                    <div class="home__wrapper swiper-wrapper">
+                        <div class="home__slide swiper-slide"></div>
+                    </div>
+                </div>
 
-					<aside class="home__filters">
-						<h2 class="home__filters-title home__title">Фильтры</h2>
-						<div data-spollers class="spollers">
-							<div class="spollers__item">
-								<button type="button" data-spoller class="spollers__title">Наименования брендов</button>
-								<div class="spollers__body">
-									<ul class="home__brands-list">
+                <aside class="home__filters">
+                    <h2 class="home__filters-title home__title">Фильтры</h2>
+                    <div data-spollers class="spollers">
+                        <div class="spollers__item">
+                            <button type="button" data-spoller class="spollers__title">Наименования брендов</button>
+                            <div class="spollers__body">
+                                <ul class="home__brands-list">
 
-									</ul>
-								</div>
-							</div>
-							<div class="spollers__item">
-								<button type="button" data-spoller class="spollers__title">Виды товаров</button>
-								<div class="spollers__body">
-									<ul class="home__type-list">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="spollers__item">
+                            <button type="button" data-spoller class="spollers__title">Виды товаров</button>
+                            <div class="spollers__body">
+                                <ul class="home__type-list">
 
-									</ul>
-								</div>
-							</div>
-						</div>
-					</aside>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
 
-					<div class="home__content">
-						<h2 class="home__products-title home__title">Все товары <span class="home__products-count"></span></h2>
-
-
-						<div class="home__sort-container">
-							<h4 class="home__sort-title">Отсортировать: </h4>
-							<ul class="home__sort-list">
-
-								<li class="home__sort-item">
-									<button data-sort="brand" class="home__sort-button">По бренду</button>
-								</li>
-								<li class="home__sort-item">
-									<button data-sort="price" class="home__sort-button">По цене</button>
-								</li>
-							</ul>
-
-							<div class="home__view-container">
-								<button data-view="tile" type="button" class="home__view-tile home__view-button home__view-active">
-									<div></div>
-									<div></div>
-								</button>
-								<button data-view="row" type="button" class="home__view-row home__view-button">
-									<div></div>
-								</button>
-							</div>
-
-							<input type="text" class="home__sort-search" placeholder="Поиск по товарам...">
-						</div>
-
-						<ul class="home__list"></ul>
+                <div class="home__content">
+                    <h2 class="home__products-title home__title">Все товары <span class="home__products-count"></span>
+                    </h2>
 
 
-					</div>
-				</div>
-			</div>
-		</main>
+                    <div class="home__sort-container">
+                        <h4 class="home__sort-title">Отсортировать: </h4>
+                        <ul class="home__sort-list">
 
-		<div class="cart__body">
-			<h2 class="cart__body-title">Корзина</h2>
-			<ul class="cart__body-list"></ul>
+                            <li class="home__sort-item">
+                                <button data-sort="brand" class="home__sort-button">По бренду</button>
+                            </li>
+                            <li class="home__sort-item">
+                                <button data-sort="price" class="home__sort-button">По цене</button>
+                            </li>
+                        </ul>
 
-			<div class="cart__body-footer cart__confirm-footer">
-				<h4 class="cart__confirm-subtitle">Итого:
-					<div></div>
-					<span class="cart__confirm-price">0 руб.</span>
-				</h4>
-				<h4 class="cart__confirm-subtitle">Налог 5%:
-					<div></div>
-					<span class="cart__confirm-price cart__confirm-tax">0 руб.</span>
-				</h4>
-			</div>
-			<button type="button" class="cart__body-confirm">Оформить заказ</button>
-		</div>
+                        <div class="home__view-container">
+                            <button data-view="tile" type="button"
+                                    class="home__view-tile home__view-button home__view-active">
+                                <div></div>
+                                <div></div>
+                            </button>
+                            <button data-view="row" type="button" class="home__view-row home__view-button">
+                                <div></div>
+                            </button>
+                        </div>
 
-		<div class="cart__body-overflow"></div>
+                        <input type="text" class="home__sort-search" placeholder="Поиск по товарам...">
+                    </div>
 
-		<div class="fav__body">
-			<h2 class="cart__body-title">Избранное</h2>
+                    <ul class="home__list"></ul>
 
-			<ul class="fav__body-list"></ul>
-		</div>
 
-		<div class="fav__body-overflow"></div>
-		<footer class="footer">
-			<div class="footer__container">
-			</div>
-		</footer>
-	</div>
-	<div id="usersign" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<button data-close type="button" class="popup__close"></button>
-				<div class="popup__form-container">
-					<h2 class="popup__form-title">Авторизация</h2>
-					<form action="" method="" class="popup__form-form">
-						<div class="popup__form-data">
-							<h3>Ваш логин</h3>
-							<input type="text" class="popup__form-login" data-required data-error="Поле обязательно для ввода" placeholder="Логин">
-						</div>
-						<div class="popup__form-data">
-							<h3>Ваш пароль</h3>
-							<input type="password" class="popup__form-password" data-required data-error="Поле обязательно для ввода" placeholder="Пароль">
-							<button class="form__viewpass form__login-pass" type="button"></button>
-						</div>
-						<div class="popup__form-footer">
-							<button type="button" class="popup__form-signup">Авторизоваться</button>
-							<p class="popup__form-text">У Вас ещё нет аккаунта?
-								<a href="#" data-popup="#userreg" class="popup__reg-link">Зарегистрироваться</a>
-							</p>
-						</div>
-					</form>
+                </div>
+            </div>
+        </div>
+    </main>
 
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="userreg" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<button data-close type="button" class="popup__close"></button>
-				<div class="popup__form-container">
-					<h2 class="popup__form-title">Регистрация</h2>
-					<form action="/createUser" method="POST" class="popup__form-form">
-						{% csrf_token %}
+    <div class="cart__body">
+        <h2 class="cart__body-title">Корзина</h2>
 
-						<div class="popup__form-data">
-							<h3>Ваше имя</h3>
-							<input type="text" name="userName" class="popup__reg-name" data-required data-error="Поле обязательно для ввода" placeholder="Имя">
-						</div>
-						<div class="popup__form-data">
-							<h3>Ваша фамилия</h3>
-							<input type="text" name="userLastName" class="popup__reg-lastname" data-required data-error="Поле обязательно для ввода" placeholder="Фамилия">
-						</div>
-						<div class="popup__form-data">
-							<h3>Придумайте логин</h3>
-							<input type="text" name="userLogin" class="popup__form-login" data-required data-error="Поле обязательно для ввода" placeholder="Логин">
-						</div>
-						<div class="popup__form-data">
-							<h3>Придумайте пароль</h3>
-							<input type="password" name="userPassword" class="popup__password-password" data-required data-error="Поле обязательно для ввода" placeholder="Пароль">
-							<button class="form__viewpass" type="button"></button>
-<!--							<input type="password" class="popup__password-confrim" data-required placeholder="Подтвердите пароль">-->
-						</div>
-						<div class="popup__form-data">
-							<h3>Ваша почта</h3>
-							<input type="email" name="userEmail" data-error="Введен не верный E-mail" data-required="email" class="popup__email" placeholder="Почта">
-						</div>
-						<div class="popup__form-data">
-							<h3>Ваш номер телефона</h3>
-							<input type="tel" name="userPhone" class="popup__phone" data-required data-error="Поле обязательно для ввода" placeholder="Телефон">
-						</div>
-						<div class="popup__form-footer">
-							<button type="button" class="popup__form-signup popup__form-reg">Зарегистрироваться</button>
-							<p class="popup__form-text">У Вас есть аккаунт? <a href="#" data-popup="#usersign" class="popup__reg-link">Войти</a>
-							</p>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="../static/js/app.js"></script>
+        <form action="cartOrder" method="POST" class="cart__body">
+            {% csrf_token %}
+            <ul class="cart__body-list"></ul>
+
+
+            <div class="cart__body-footer cart__confirm-footer">
+                <h4 class="cart__confirm-subtitle">Итого:
+                    <div></div>
+                    <span class="cart__confirm-price">0 руб.</span>
+                </h4>
+                <h4 class="cart__confirm-subtitle">Налог 5%:
+                    <div></div>
+                    <span class="cart__confirm-price cart__confirm-tax">0 руб.</span>
+                </h4>
+            </div>
+            <button type="submit" class="cart__body-confirm">Оформить заказ</button>
+        </form>
+    </div>
+
+    <div class="cart__body-overflow"></div>
+
+    <div class="fav__body">
+        <h2 class="cart__body-title">Избранное</h2>
+
+        <ul class="fav__body-list"></ul>
+    </div>
+
+    <div class="fav__body-overflow"></div>
+    <footer class="footer">
+        <div class="footer__container">
+        </div>
+    </footer>
+</div>
+<div id="usersign" aria-hidden="true" class="popup">
+    <div class="popup__wrapper">
+        <div class="popup__content">
+            <button data-close type="button" class="popup__close"></button>
+            <div class="popup__form-container">
+                <h2 class="popup__form-title">Авторизация</h2>
+                <form action="" method="" class="popup__form-form">
+                    <div class="popup__form-data">
+                        <h3>Ваш логин</h3>
+                        <input type="text" class="popup__form-login" data-required
+                               data-error="Поле обязательно для ввода" placeholder="Логин">
+                    </div>
+                    <div class="popup__form-data">
+                        <h3>Ваш пароль</h3>
+                        <input type="password" class="popup__form-password" data-required
+                               data-error="Поле обязательно для ввода" placeholder="Пароль">
+                        <button class="form__viewpass form__login-pass" type="button"></button>
+                    </div>
+                    <div class="popup__form-footer">
+                        <button type="button" class="popup__form-signup">Авторизоваться</button>
+                        <p class="popup__form-text">У Вас ещё нет аккаунта?
+                            <a href="#" data-popup="#userreg" class="popup__reg-link">Зарегистрироваться</a>
+                        </p>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="userreg" aria-hidden="true" class="popup">
+    <div class="popup__wrapper">
+        <div class="popup__content">
+            <button data-close type="button" class="popup__close"></button>
+            <div class="popup__form-container">
+                <h2 class="popup__form-title">Регистрация</h2>
+                <form action="createUser/" method="POST" class="popup__form-form">
+                    {% csrf_token %}
+
+                    <div class="popup__form-data">
+                        <h3>Ваше имя</h3>
+                        <input type="text" name="userName" class="popup__reg-name" data-required
+                               data-error="Поле обязательно для ввода" placeholder="Имя">
+                    </div>
+                    <div class="popup__form-data">
+                        <h3>Ваша фамилия</h3>
+                        <input type="text" name="userLastName" class="popup__reg-lastname" data-required
+                               data-error="Поле обязательно для ввода" placeholder="Фамилия">
+                    </div>
+                    <div class="popup__form-data">
+                        <h3>Придумайте логин</h3>
+                        <input type="text" name="userLogin" class="popup__form-login" data-required
+                               data-error="Поле обязательно для ввода" placeholder="Логин">
+                    </div>
+                    <div class="popup__form-data">
+                        <h3>Придумайте пароль</h3>
+                        <input type="password" name="userPassword" class="popup__password-password" data-required
+                               data-error="Поле обязательно для ввода" placeholder="Пароль">
+                        <button class="form__viewpass" type="button"></button>
+                    </div>
+                    <div class="popup__form-data">
+                        <h3>Ваша почта</h3>
+                        <input type="email" name="userEmail" data-error="Введен не верный E-mail" data-required="email"
+                               class="popup__email" placeholder="Почта">
+                    </div>
+                    <div class="popup__form-data">
+                        <h3>Ваш номер телефона</h3>
+                        <input type="tel" name="userPhone" class="popup__phone" data-required
+                               data-error="Поле обязательно для ввода" placeholder="Телефон">
+                    </div>
+                    <div class="popup__form-footer">
+                        <button type="submit" class="popup__form-signup popup__form-reg">Зарегистрироваться</button>
+                        <p class="popup__form-text">У Вас есть аккаунт? <a href="#" data-popup="#usersign"
+                                                                           class="popup__reg-link">Войти</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../static/js/app.js"></script>
 </body>
 
 </html>

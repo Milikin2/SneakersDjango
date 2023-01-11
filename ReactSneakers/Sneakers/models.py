@@ -19,17 +19,5 @@ class User(models.Model):
     userPassword = models.CharField("Пароль клиента", max_length=255)
 
 
-class Fav(models.Model):
-    productImg = models.CharField("Путь до картинки", max_length=255)
-    productType = models.CharField("Тип товара", max_length=255)
-    productTitle = models.CharField("Заголовок", max_length=255)
-    productBrand = models.CharField("Бренд", max_length=255)
-    productPrice = models.DecimalField("Цена", max_digits=6, decimal_places=2)
-
-
 class Bought(models.Model):
-    productImg = models.CharField("Путь до картинки", max_length=255)
-    productType = models.CharField("Тип товара", max_length=255)
     productTitle = models.CharField("Заголовок", max_length=255)
-    productBrand = models.CharField("Бренд", max_length=255)
-    productPrice = models.DecimalField("Цена", max_digits=6, decimal_places=2)

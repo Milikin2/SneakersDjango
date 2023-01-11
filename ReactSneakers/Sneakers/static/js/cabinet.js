@@ -6,6 +6,9 @@ const userLogin = document.querySelector(".cabinet__data-login")// localStorage.
 const userPassword = document.querySelector(".cabinet__data-password")// localStorage.cabinetPassword
 
 userName.value = localStorage.cabinetName
+if(localStorage.cabinetId){
+    userId = localStorage.cabinetId
+}
 userLastname.value = localStorage.cabinetLastname
 userPhone.value = localStorage.cabinetPhone.slice(1, localStorage.cabinetPhone.lenght)
 userEmail.value = localStorage.cabinetEmail

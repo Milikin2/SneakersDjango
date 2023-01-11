@@ -7282,9 +7282,35 @@
             let usertxt = await responseUser.text()
             let users = JSON.parse(usertxt)
             const signupButton = document.querySelector(".popup__form-signup");
+            const signupReg = document.querySelector(".popup__form-reg")
+            const cartConfirm = document.querySelector(".cart__body-confirm")
+
+            if(cartConfirm){
+                cartConfirm.addEventListener('click', function(){
+                    console.log(123)
+                })
+            }
+
+            if(signupReg){
+                signupReg.addEventListener('click', function(){
+                    let cabinetName = document.querySelector('.popup__reg-name').value
+                    let cabinetLastname = document.querySelector('.popup__reg-lastname').value
+                    let cabinetPhone = document.querySelector('.popup__phone').value
+                    let cabinetEmail = document.querySelector('.popup__email').value
+                    let cabinetLogin = document.querySelector('.popup__form-login').value
+                    let cabinetPassword = document.querySelector('.popup__password-password').value
+
+                    localStorage.setItem("cabinetName", cabinetName)
+                    localStorage.setItem("cabinetLastname", cabinetLastname)
+                    localStorage.setItem("cabinetPhone", cabinetPhone)
+                    localStorage.setItem("cabinetEmail", cabinetEmail)
+                    localStorage.setItem("cabinetLogin", cabinetLogin)
+                    localStorage.setItem("cabinetPassword", cabinetPassword)
+                })
+            }
+
             if(signupButton){
                 signupButton.addEventListener('click', function(){
-                    console.log(users)
                     const signupLogin = document.querySelector(".popup__form-login")
                     const signupPassword = document.querySelector(".popup__form-password")
                     for(let i = 0; i < users.length; i++){
@@ -7305,7 +7331,7 @@
                                 localStorage.setItem("cabinetEmail", cabinetEmail)
                                 localStorage.setItem("cabinetLogin", cabinetLogin)
                                 localStorage.setItem("cabinetPassword", cabinetPassword)
-                                window.location.href = 'http://127.0.0.1:8000/cabinet.html/'
+                                window.location.href = 'http://127.0.0.1:8000/cabinetData.html/'
                                 break;
                             }else{
                                 signupPassword.value = '';
@@ -7444,6 +7470,25 @@
         let products__brand_counter = 0;
         let products__type_counter = 0;
 
+
+        console.log(localStorage)
+        if(localStorage.length > 0){
+            const userFav = document.querySelector(".header__additional-favourite")
+            const userLogout = document.querySelector(".header__body-logout")
+            if(userFav){
+                userFav.nextElementSibling.remove()
+                userFav.insertAdjacentHTML('afterend', `
+                <a href="cabinetData.html" class="header__additional-user header__additional-button">
+                    <img src="../static/img/user__icon.svg" class="header__additional-img" alt="User cabinet">
+                </a>`)
+            }
+            if(userLogout){
+                userLogout.addEventListener('click', function(){
+                    window.location.href = 'http://127.0.0.1:8000/'
+                    localStorage.clear()
+                })
+            }
+        }
         function adminList(img, title, price, brand, type) {
             return `\n        <li data-value="${title}" data-brand="${brand}"\n                                    data-type="${type}" class="home__list-item">\n                                    <form action="" class="admin__product-form">\n                                                                               <button type="button" class="admin__product-remove"></button>\n                                        <div class="home__item-img">\n                                            <img src="${img}" alt="${title}">\n                                            <h3>Путь до картинки</h3>\n                                            <input type="text" value="${img}" class="admin__add-img">\n                                        </div>\n                                        <div class="admin__title-container">\n                                            <h3>Заголовок</h3>\n                                            <input type="text" value="${title}"\n                                                class="admin__item-title">\n                                        </div>\n                                        <div class="admin__title-container">\n                                            <h3>Бренд</h3>\n                                            <input type="text" value="${brand}"\n                                                class="admin__item-title">\n                                        </div>\n                                        <div class="home__item-footer admin__add-footer">\n                                            <div class="home__item-price admin__add-price">\n                                                <p>Цена:</p>\n                                                <div class="admin__price-container">\n                                                    <input type="number" value="${price}" class="admin__item-price">\n                                                    <span>руб.</span>\n                                                </div>\n                                            </div>\n                                            <button type="submit" class="admin__add-confirm">Сохранить\n                                                изменения</button>\n                                        </div>\n                                    </form>\n                                </li>`;
         }
@@ -7539,7 +7584,7 @@
             cart__price.innerText = `${normalPrice(price)} руб.`;
             cart__tax.innerText = `${Math.floor(normalPrice(.05 * price))} руб.`;
         };
-        const generateCartProduct = (img, title, price, id) => `\n                <li class="cart__body-item" data-id="${id}">\n\t\t\t\t\t<div class="cart__body-img">\n\t\t\t\t\t\t<img src="${img}" alt="">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="cart__body-text">\n\t\t\t\t\t\t${title}\n\t\t\t\t\t\t<div class="cart__body-price">${normalPrice(price)} руб.</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="cart__body-remove"></div>\n\t\t\t\t</li>\n                `;
+        const generateCartProduct = (img, title, price, id) => `\n                <li class="cart__body-item" data-id="${id}">\n\t\t\t\t\t<div class="cart__body-img">\n\t\t\t\t\t\t<img src="${img}" alt="">\n\t\t\t\t\t</div>\n\t\t\t\t\t <input type='text' name='orderTitle' class='order__title-hidden' hidden value='${title} ${price}'> <div class="cart__body-text">\n\t\t\t\t\t\t${title}\n\t\t\t\t\t\t<div class="cart__body-price">${normalPrice(price)} руб.</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="cart__body-remove"></div>\n\t\t\t\t</li>\n                `;
         const generateFavProduct = (img, title, price, id) => `\n                <li class="fav__body-item" data-id="${id}">\n\t\t\t\t\t<div class="fav__body-img">\n\t\t\t\t\t\t<img src="${img}" alt="">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="fav__body-text">\n\t\t\t\t\t\t${title}\n\t\t\t\t\t\t<div class="fav__body-price">${normalPrice(price)} руб.</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="fav__body-remove"></div>\n\t\t\t\t</li>\n                `;
         if (products__list) products__list.addEventListener("click", (function(e) {
             if (e.target.classList.contains("home__item-add")) {
@@ -7578,6 +7623,7 @@
         const deleteFavProduct = productParent => {
             let id = productParent.dataset.id;
             document.querySelector(`.home__list-item[data-id="${id}"]`).querySelector(".home__item-fav").disabled = false;
+
             document.querySelector(`.home__list-item[data-id="${id}"]`).querySelector(".home__item-fav").classList.remove("fav__active");
             productParent.remove();
         };

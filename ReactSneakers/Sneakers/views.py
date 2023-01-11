@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Product
 from .models import User
+from .models import Bought
 from django.http import JsonResponse
 
 
@@ -40,4 +41,11 @@ def createUser(request):
     model.userEmail = request.POST['userEmail']
     model.userPhone = request.POST['userPhone']
     model.save()
-    return render(request, 'cabinet.html')
+    return render(request, 'cabinetData.html')
+
+
+def cartOrder(request):
+    model = Bought()
+    model.productTitle = request.POST['orderTitle']
+    model.save()
+    return render(request, 'home.html')
